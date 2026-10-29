@@ -294,7 +294,7 @@
             "path": "cli"
           },
           {
-            "title": "Use CLI in offline mode",
+            "title": "Use Vault Radar CLI in offline mode",
             "path": "cli/offline"
           },
           {
