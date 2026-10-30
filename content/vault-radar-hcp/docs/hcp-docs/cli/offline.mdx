@@ -145,13 +145,13 @@ $ export MICROSOFT_TEAMS_CLIENT_ID="APPLICATION_CLIENT_ID"
 $ export MICROSOFT_TEAMS_CLIENT_SECRET="APPLICATION_CLIENT_SECRET"
 ```
 
-Select a team and channel explicitly. The command scans channel messages and replies:
+Select a team and channel by name. The CLI looks up the team in the tenant and the channel within that team, then uses their Microsoft Graph IDs for the scan. Name matching is case-insensitive. The lookup fails when no matching resource exists or when a name matches more than one resource. You can use `--team-id` and `--channel-id` instead when you already have the IDs.
 
 ```shell-session
 $ vault-radar scan teams \
     --tenant-id "TENANT_ID" \
-    --team-id "TEAM_ID" \
-    --channel-id "CHANNEL_ID" \
+    --team-name "TEAM_NAME" \
+    --channel-name "CHANNEL_NAME" \
     --offline \
     --outfile "teams-results.csv"
 ```
